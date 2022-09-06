@@ -1,0 +1,34 @@
+{
+  "name": "octo",
+  "version": "1.0.0",
+  "description": "octo is an configuration project for your front-end project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "front-end",
+    "eslintrc",
+    "git-hooks",
+    "prettierrc",
+    "lint-staged",
+    "configuration"
+  ],
+  "author": "jiaao.mario@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiaaoMario/octo"
+  },
+  "bugs": {
+    "email": "jiaao.mario@gmail.com",
+    "url": "https://github.com/jiaaoMario/octo/issues"
+  },
+  "contributors": [
+    {
+      "name": "jiaao.mario",
+      "email": "jiaao.mario@gmail.com",
+      "url": "https://github.com/jiaaoMario"
+    }
+  ]
+}
