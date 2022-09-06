@@ -30,5 +30,8 @@
       "email": "jiaao.mario@gmail.com",
       "url": "https://github.com/jiaaoMario"
     }
-  ]
+  ],
+  "devDependencies": {
+    "husky": "^8.0.1"
+  }
 }
