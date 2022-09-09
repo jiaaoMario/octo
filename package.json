@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "octo is an configuration project for your front-end project",
   "main": "index.js",
+  "bin": {
+    "octo-init": "./bin/init.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
