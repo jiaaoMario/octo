@@ -13,3 +13,20 @@
 ---
 
 如果你已经厌倦了每创建一个前端项目时，重新配置一套代码规范，你可以尝试使用一下 Octo。
+
+## 安装
+
+```sh
+npm install octo-minions -D
+```
+
+## 在 Octo 中集成了什么功能
+
+1. Git 钩子 - Husky
+2. Git Commit-Msg Hooks - commitlint
+3. Git Pre-commit Hooks - lint-staged
+4. 代码风格格式化工具 - prettier
+5. 在 ECMAScript/JavaScript 代码中识别和报告模式匹配的工具 - eslint
+
+## License
+MIT
