@@ -32,14 +32,23 @@ try {
   if (_checkPMVersion()) {
     throw Error("nodeVersion");
   }
-  console.log(pm);
+
+  const dependencies = [
+    "lint-staged",
+    "prettier",
+    "@commitlint/cli",
+    "@commitlint/config-conventional",
+  ];
+  function _splitDependencies() {
+    return dependencies.join(" ");
+  }
   switch (pm) {
     case "npm":
-      execSync("npm install lint-staged prettier --save-dev");
+      execSync(`npm install ${_splitDependencies()} --save-dev`);
       break;
     case "yarn":
     case "pnpm":
-      execSync(`${pm} add lint-staged prettier --save-dev`);
+      execSync(`${pm} add ${_splitDependencies()} --save-dev`);
       break;
   }
 } catch (error) {

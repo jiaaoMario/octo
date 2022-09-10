@@ -1,6 +1,6 @@
 {
   "name": "octo-minions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "octo is an configuration project for your front-end project",
   "main": "index.js",
   "bin": {
