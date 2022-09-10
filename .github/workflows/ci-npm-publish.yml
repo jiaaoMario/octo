@@ -1,0 +1,22 @@
+name: ci-npm-auto-publish
+
+on:
+  push: 
+    branches: ["main"]
+
+jobs:
+  Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: use pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.1.7
+          # run: pnpm install --frozen-lockfile
+      - name: use Nodejs 16x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+          # cache: 'pnpm'
+          # cache-dependency-path: pnpm-lock.yaml
+      # - name: Publish
