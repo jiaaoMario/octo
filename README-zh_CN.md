@@ -7,7 +7,7 @@
 </div>
 
 <a href="/README.md">
-![](https://img.shields.io/badge/English-README-blue)
+<img src="https://img.shields.io/badge/English-README-blue" />
 </a>
 
 ---
