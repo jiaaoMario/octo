@@ -36,6 +36,8 @@ try {
   const dependencies = [
     "lint-staged",
     "prettier",
+    "eslint",
+    "eslint-config-prettier",
     "@commitlint/cli",
     "@commitlint/config-conventional",
   ];
