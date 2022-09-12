@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   husky: ^8.0.1
+  minimist: ^1.2.6
   semver: ^7.3.7
   which-pm-runs: ^1.1.0
 
 devDependencies:
   husky: 8.0.1
+  minimist: 1.2.6
   semver: 7.3.7
   which-pm-runs: 1.1.0
 
@@ -23,6 +25,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /minimist/1.2.6:
+    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
   /semver/7.3.7:

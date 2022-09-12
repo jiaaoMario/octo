@@ -36,6 +36,7 @@
   ],
   "devDependencies": {
     "husky": "^8.0.1",
+    "minimist": "^1.2.6",
     "semver": "^7.3.7",
     "which-pm-runs": "^1.1.0"
   },

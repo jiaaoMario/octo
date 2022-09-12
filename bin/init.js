@@ -1,9 +1,12 @@
 #!/usr/bin/env node
+const fs = require("fs");
 const path = require("path");
 const husky = require("husky");
 const semver = require("semver");
+const minimist = require("minimist");
 const whichPMRuns = require("which-pm-runs");
 const childProcess = require("child_process");
+const parseRc = require("../lib/utils/parseRc");
 const pkg = require("../package.json");
 
 const { execSync } = childProcess;
@@ -11,6 +14,8 @@ const commandCallPath = process.env.INIT_CWD;
 const huskyRootPath = path.join(commandCallPath, ".husky");
 const preCommitPath = path.join(huskyRootPath, "pre-commit");
 const commitMsgPath = path.join(huskyRootPath, "commit-msg");
+let expectDependencies = [];
+
 try {
   execSync("git rev-parse --git-dir >/dev/null 2>&1");
   husky.install();
@@ -19,6 +24,39 @@ try {
 } catch (error) {
   console.log("🆘 oops~ it seems that your project didn't initialization git.");
   console.log("suggest: you can execute git init first");
+}
+
+try {
+  const args = minimist(process.argv.slice(2));
+  const { usage } = args;
+  if (usage) {
+    expectDependencies = usage;
+  } else {
+    const rcFileName = ".octorc";
+    const ext = [".js", "", ".json"];
+    let rcFilePath = "";
+    for (let i = 0; i < ext.length; i++) {
+      const fileName = path.join(commandCallPath, `/${rcFileName}${ext[i]}`);
+      if (fs.existsSync(fileName)) {
+        i = ext.length;
+        rcFilePath = fileName;
+      }
+    }
+    if (!rcFilePath) {
+      expectDependencies = [
+        "lint-staged",
+        "prettier",
+        "eslint",
+        "eslint-config-prettier",
+        "@commitlint/cli",
+        "@commitlint/config-conventional",
+      ];
+    } else {
+      expectDependencies = parseRc(rcFilePath);
+    }
+  }
+} catch (error) {
+  console.log(error);
 }
 
 const pmRunner = whichPMRuns();
@@ -33,14 +71,7 @@ try {
     throw Error("nodeVersion");
   }
 
-  const dependencies = [
-    "lint-staged",
-    "prettier",
-    "eslint",
-    "eslint-config-prettier",
-    "@commitlint/cli",
-    "@commitlint/config-conventional",
-  ];
+  const dependencies = expectDependencies;
   function _splitDependencies() {
     return dependencies.join(" ");
   }
