@@ -3,7 +3,7 @@
 </p>
 <div align="center">
 <h2>octo 📦</h2>
-<p>A toolbox for common scripts for your Front-end projects</p>
+<p>A toolbox of common scripts for your Front-end projects</p>
 </div>
 
 <a href="/README-zh_CN.md">
