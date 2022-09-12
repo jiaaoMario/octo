@@ -20,6 +20,46 @@
 npm install octo-minions -D
 ```
 
+## 使用
+
+### Husky
+
+在你初次执行 `octo-init` 命令后，Husky 便会自动在你的项目中配置，并且帮助你注册一些 git-hooks，如：pre-commit、commit-msg 等。
+
+### commitlint
+
+commitlint.config.js
+
+```javascript
+module.exports = require("octo/commitlint");
+```
+
+### lint-staged
+
+.lintstagedrc.js
+
+```javascript
+module.exports = require("octo/lintstagedrc");
+```
+
+### prettier
+
+.prettierrc.js
+
+```javascript
+module.exports = require("octo/prettier");
+```
+
+### eslint
+
+.eslintrc.js
+
+```javascript
+module.exports = {
+  extends: ["./node_modules/octo/eslint.js"],
+};
+```
+
 ## 在 Octo 中集成了什么功能
 
 1. Git 钩子 - Husky
@@ -29,4 +69,5 @@ npm install octo-minions -D
 5. 在 ECMAScript/JavaScript 代码中识别和报告模式匹配的工具 - eslint
 
 ## License
+
 MIT

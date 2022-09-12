@@ -20,6 +20,46 @@ If you're fed up with configuring a set of specs every time you create a front-e
 npm install octo-minions -D
 ```
 
+## Usage
+
+### Husky
+
+Husky will auto deploy when you run `octo-init`, and octo will help you auto register some git-hooks, e.g pre-commit, commit-msg.
+
+### commitlint
+
+commitlint.config.js
+
+```javascript
+module.exports = require("octo/commitlint");
+```
+
+### lint-staged
+
+.lintstagedrc.js
+
+```javascript
+module.exports = require("octo/lintstagedrc");
+```
+
+### prettier
+
+.prettierrc.js
+
+```javascript
+module.exports = require("octo/prettier");
+```
+
+### eslint
+
+.eslintrc.js
+
+```javascript
+module.exports = {
+  extends: ["./node_modules/octo/eslint.js"],
+};
+```
+
 ## What features are integrated into Octo
 
 1. Git Hooks - Husky
