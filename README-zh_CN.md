@@ -60,6 +60,14 @@ module.exports = {
 };
 ```
 
+### tsconfig
+
+```json
+{
+  "extends": "./node_modules/octo/shared-tsconfig.json"
+}
+```
+
 ## 在 Octo 中集成了什么功能
 
 1. Git 钩子 - Husky
@@ -67,6 +75,7 @@ module.exports = {
 3. Git Pre-commit Hooks - lint-staged
 4. 代码风格格式化工具 - prettier
 5. 在 ECMAScript/JavaScript 代码中识别和报告模式匹配的工具 - eslint
+6. 强类型语言 - TypeScript
 
 ## License
 

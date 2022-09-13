@@ -60,6 +60,14 @@ module.exports = {
 };
 ```
 
+### tsconfig
+
+```json
+{
+  "extends": "./node_modules/octo/shared-tsconfig.json"
+}
+```
+
 ## What features are integrated into Octo
 
 1. Git Hooks - Husky
@@ -67,7 +75,12 @@ module.exports = {
 3. Pre-commit Hooks - lint-staged
 4. code formatter - prettier
 5. Tool for identifying and reporting on patterns found in ECMAScript/JavaScript code - eslint
+6. Strongly typed programming language - TypeScript
 
 ## License
 
 MIT
+
+```
+
+```
