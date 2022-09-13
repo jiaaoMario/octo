@@ -34,13 +34,13 @@
       "url": "https://github.com/jiaaoMario"
     }
   ],
-  "devDependencies": {
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
     "husky": "^8.0.1",
     "minimist": "^1.2.6",
     "semver": "^7.3.7",
     "which-pm-runs": "^1.1.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
